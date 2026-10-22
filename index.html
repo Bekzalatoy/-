@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Последний бокал — детективное расследование</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <!-- Верхняя панель -->
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-icon">🔍</span>
+      <div>
+        <h1>Последний бокал</h1>
+        <p>Детективное расследование</p>
+      </div>
+    </div>
+
+    <div class="progress">
+      <span>Улики: <b id="clueCount">0</b>/<b id="clueTotal">0</b></span>
+      <div class="bar"><div id="clueBar"></div></div>
+    </div>
+
+    <div class="top-actions">
+      <button class="btn ghost" id="btnBrief">📁 Дело</button>
+      <button class="btn danger" id="btnAccuse">⚖️ Выдвинуть обвинение</button>
+    </div>
+  </header>
+
+  <!-- Основной экран: места / подозреваемые / инвентарь -->
+  <main class="layout">
+
+    <section class="panel" id="scenePanel">
+      <h2>Места</h2>
+      <nav class="tabs" id="placeTabs"></nav>
+      <div id="scene" class="scene"></div>
+    </section>
+
+    <section class="panel" id="suspectsPanel">
+      <h2>Подозреваемые</h2>
+      <div id="suspects" class="suspects"></div>
+    </section>
+
+    <section class="panel" id="notesPanel">
+      <div class="tabs">
+        <button class="tab active" data-tab="inventory">🎒 Инвентарь</button>
+        <button class="tab" data-tab="journal">📓 Дневник</button>
+      </div>
+      <div id="inventory" class="inventory"></div>
+      <div id="journal" class="journal" hidden></div>
+    </section>
+
+  </main>
+
+  <!-- Всплывающие уведомления -->
+  <div id="toasts" class="toasts"></div>
+
+  <!-- Универсальное модальное окно (улики, допросы, обвинение) -->
+  <div id="modal" class="overlay">
+    <div class="modal" id="modalBox">
+      <button class="close" id="modalClose" aria-label="Закрыть">✕</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Экран концовки -->
+  <div id="ending" class="ending"></div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
